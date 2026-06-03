@@ -8,10 +8,9 @@
 
 - `itinerary.md` — 主行程總覽（含各日連結）
 - `days/` — 每日詳細行程，各自獨立的 Markdown 檔案（命名格式：`MMDD.md`）
-- `assets/電子機票.pdf` — 去回程電子機票（台灣虎航 JEU19B）
-- `.claude/skills/update-itinerary/` — 行程更新技能與格式規範（`reference/` 資料夾在此）
-
-**更新工作流程：** 討論完行程異動後，執行 `/update-itinerary`，技能會更新 `itinerary.md` 與 `days/` 內的受影響檔案。
+- `assets/` — 參考資料（電子機票、網友資源索引）
+- `transportations/` — 各路段交通指南（命名格式：`起訖點代碼_路段.md`）
+- `README.md` — 簡易專案說明
 
 ## 行程概覽
 
@@ -20,24 +19,35 @@
 - **去程：** IT214｜08/28 11:30 桃園 → 15:05 岡山桃太郎機場
 - **回程：** IT215｜09/05 15:55 岡山桃太郎機場 → 17:40 桃園
 
-## Python 環境
+## 工作流程
 
-所有 Python 相關操作請使用 `claudecode` miniconda 虛擬環境（Python 3.11.15）：
+1. 執行 `/discuss-itinerary`
+   - 自動讀取全部行程、交通指南與參考資源，確保討論有完整的資料基礎
+   - 若使用者提供外部網址，抓取後納入；需即時資訊則網路搜尋
 
-```
-conda run -n claudecode python script.py
-```
+2. 與使用者討論
+   - 依據前述資料與使用者的限制，完成希望的行程內容
 
-### .claude/settings.json 權限設定說明
+3. 執行 `/update-itinerary`
+   - 同步更新 `itinerary.md` 與 `days/` 內的受影響檔案
 
-專案內的 `.claude/settings.json` 透過 `permissions` 強制執行此規則：
+4. 整理資料（強制：凡本次討論中有抓取任何網站內容，即須執行）
+   - 執行 `/save-website-abstract`
+   - 逐一確認每個已抓取的網站：若 `assets/website_abstract.md` 尚無該網站的摘要，補寫並歸入對應分類
+   - 依 `assets/reference_website.md` 的分類（交通、美食、購物、景點）寫入 `assets/website_abstract.md`
 
-| 設定 | 內容 | 原因 |
-|------|------|------|
-| `deny` | `pip install`、`python`、`python3`、`python -m pip` | 防止誤用 base 環境（Python 3.13）安裝套件或執行腳本 |
-| `allow` | `conda run -n claudecode:*` | 明確允許透過 claudecode 環境執行所有 Python 操作 |
+## 資料來源
 
-`env.PATH` 也已指向 claudecode 環境的 bin 目錄，作為額外保障。
+- `assets/電子機票.pdf` — 去回程電子機票（台灣虎航 JEU19B）
+- `assets/reference_website.md` — 網頁參考資源索引（交通、美食、購物、景點連結），*由使用者維護*
+- `assets/website_abstract.md` — Claude 整理的網站摘要（依 `reference_website.md` 分類歸入）
+- `transportations/OKJ_OkayamaStation.md` — 岡山桃太郎機場 ↔ 岡山站利木津巴士指南
+
+## 技能
+
+- `.claude/skills/discuss-itinerary/` — 行程討論前準備：讀取全部行程、交通指南與參考資源後再討論（每次討論前執行）
+- `.claude/skills/update-itinerary/` — 行程更新技能與格式規範（`reference/` 資料夾在此）
+- `.claude/skills/save-website-abstract/` — 將討論中抓取的新網站整理成摘要，寫入 `assets/website_abstract.md`（討論後、有新網站時執行）
 
 ## 編輯行程時的原則
 
@@ -45,4 +55,6 @@ conda run -n claudecode python script.py
 - 備中松山城已確定不排入主行程（夏季炎熱、轉乘繁瑣、與最後回岡山的動線不順）
 - 8/29 直島行程已預設雨天備案（改岡山市區或吉備津神社）
 - 9/5 為純移動日，不安排任何景點
+- 去回程日若有對應交通指南，在標頭加入連結（參考 `days/0828.md` 格式）
 - 新增或修改行程時，執行 `/update-itinerary` 同步 `itinerary.md` 與 `days/` 對應檔案
+- 討論中只要有抓取網站內容，結束前必須執行 `/save-website-abstract`；凡摘要尚無記錄的網站，均需補寫後歸入 `assets/website_abstract.md`
