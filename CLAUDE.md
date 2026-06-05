@@ -8,7 +8,7 @@
 
 - `itinerary.md` — 主行程總覽（含各日連結），包括行程的使用者基本設定，關於行程的基本資料都從這裡開始
 - `days/` — 每日詳細行程，各自獨立的 Markdown 檔案（命名格式：`MMDD.md`）
-- `assets/` — 參考資料（電子機票、網友資源索引）
+- `assets/` — 參考資料（電子機票、飯店確認書、網友資源索引）
 - `transportations/` — 各路段交通指南（命名格式：`起訖點代碼_路段.md`）
 - `README.md` — 簡易專案說明
 
@@ -32,6 +32,8 @@
 ## 資料來源
 
 - `assets/電子機票.pdf` — 去回程電子機票（台灣虎航 JEU19B）
+- `assets/Super Hotel Okayama Station Higashiguchi.pdf` — 岡山住宿訂房確認書（08/28–08/31，3 晚）
+- `assets/Yutori by b hotel - 1Br Apartment for 3Ppl in a quiet.pdf` — 尾道住宿訂房確認書（08/31–09/05，5 晚）
 - `assets/reference_website.md` — 網頁參考資源索引（交通、美食、購物、景點連結），*由使用者維護*
 - `assets/website_abstract.md` — Claude 整理的網站摘要（依 `reference_website.md` 分類歸入）
 - `transportations/OKJ_OkayamaStation.md` — 岡山桃太郎機場 ↔ 岡山站利木津巴士指南
@@ -41,6 +43,7 @@
 - `.claude/skills/discuss-itinerary/` — 行程討論前準備：讀取全部行程、交通指南與參考資源後再討論（每次討論前執行）
 - `.claude/skills/update-itinerary/` — 行程更新技能與格式規範（`reference/` 資料夾在此）
 - `.claude/skills/save-website-abstract/` — 將討論中抓取的新網站整理成摘要，寫入 `assets/website_abstract.md`（討論後、有新網站時執行）
+- `.claude/skills/tw-opendata-transportation/` — 查詢台灣交通批次資料集（台鐵、高鐵、捷運、公路客運等路線、票價、時刻表）
 
 ## 代理人
 
