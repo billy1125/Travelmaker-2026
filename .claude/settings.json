@@ -1,8 +1,4 @@
 {
-  "env": {
-    "CONDA_DEFAULT_ENV": "claudecode",
-    "PATH": "C:\\Users\\billy\\miniconda3\\envs\\claudecode;C:\\Users\\billy\\miniconda3\\envs\\claudecode\\Scripts;C:\\Users\\billy\\miniconda3\\envs\\claudecode\\Library\\bin"
-  },
   "permissions": {
     "deny": [
       "Bash(pip install:*)",
