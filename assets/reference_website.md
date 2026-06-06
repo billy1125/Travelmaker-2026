@@ -2,6 +2,9 @@
 
 **由使用者維護**
 
+- [打包清單範本](https://www.notion.com/zh-tw/templates/category/packing-lists)
+- [2026出國行李清單懶人包](https://joycewen.cc/packing-list-prep/)
+- [2026年日本旅遊｜最新行李規定及日本旅遊必備清單](https://www.kipling.com.tw/Article/Detail/97945?lang=zh-TW)
 - [來去藝術小島！拜訪「直島」當代藝術交織瀨戶內作品、交通手冊](https://www.jsimplelife.com/kagawa-art-2/)
 - [藝術小島之直島日歸旅行](https://matcha-jp.com/tw/5179)
 - [藝術聖地「直島」2天1夜行程推薦](https://shikoku.letsgojp.com/archives/536/)

@@ -20,6 +20,7 @@
 
 2. 與使用者討論
    - 依據前述資料與使用者的限制，完成希望的行程內容
+   - 如果使用者特定指出以代理人進行討論，必須參考 **代理人** `.claude/agent/` 章節說明
 
 3. 執行 `/update-itinerary`
    - 同步更新 `itinerary.md` 與 `days/` 內的受影響檔案
@@ -27,14 +28,14 @@
 4. 整理資料（強制：凡本次討論中有抓取任何網站內容，即須執行）
    - 執行 `/save-website-abstract`
    - 逐一確認每個已抓取的網站：若 `assets/website_abstract.md` 尚無該網站的摘要，補寫並歸入對應分類
-   - 依 `assets/reference_website.md` 的分類（交通、美食、購物、景點）寫入 `assets/website_abstract.md`
+   - 依 `assets/reference_website.md` 的分類（交通、美食、購物、景點、行李準備）寫入 `assets/website_abstract.md`
 
 ## 資料來源
 
 - `assets/電子機票.pdf` — 去回程電子機票（台灣虎航 JEU19B）
 - `assets/Super Hotel Okayama Station Higashiguchi.pdf` — 岡山住宿訂房確認書（08/28–08/31，3 晚）
 - `assets/Yutori by b hotel - 1Br Apartment for 3Ppl in a quiet.pdf` — 尾道住宿訂房確認書（08/31–09/05，5 晚）
-- `assets/reference_website.md` — 網頁參考資源索引（交通、美食、購物、景點連結），*由使用者維護*
+- `assets/reference_website.md` — 網頁參考資源索引（交通、美食、購物、景點、行李準備連結），*由使用者維護*
 - `assets/website_abstract.md` — Claude 整理的網站摘要（依 `reference_website.md` 分類歸入）
 - `transportations/OKJ_OkayamaStation.md` — 岡山桃太郎機場 ↔ 岡山站利木津巴士指南
 
