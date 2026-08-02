@@ -1,4 +1,19 @@
 {
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit*)",
+            "statusMessage": "檢查每日行程確認狀態…",
+            "command": "m=$(grep -LE \"^> ✅.*確認\" days/*.md 2>/dev/null | sed \"s|days/||;s|\\.md||\" | sort | tr \"\\n\" \" \"); if [ -n \"$m\" ]; then printf '{\"systemMessage\":\"commit 前請審核每日行程確認狀態：尚未標記 ✅ 的日期 → %s\"}\\n' \"$m\"; else printf '{\"systemMessage\":\"days/ 內每日行程皆已標記 ✅ 確認\"}\\n'; fi"
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "deny": [
       "Bash(pip install:*)",

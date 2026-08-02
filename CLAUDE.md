@@ -20,6 +20,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `itinerary_draft.md` — `trip-planner` 代理人的輸出草稿，**不是正式行程**；正式內容以 `itinerary.md` 與 `days/` 為準
 - `archive/{YYYYMMDD-HHMM}/` — `/update-itinerary` 在每次改動前自動留下的變更前副本，維持原有相對路徑；**唯讀，不刪除也不覆寫既有目錄**
 
+## 每日行程的確認狀態
+
+`days/MMDD.md` 開頭若有這一列，代表該日資料已逐項查證過：
+
+```markdown
+> ✅ **YYYY.MM.DD 資訊已初步確認**
+```
+
+- **沒有這一列的日子，資料尚未查證**，提出建議前要重新確認營業時間、票價與班次
+- 完成一日查證後，主動詢問使用者是否加上橫幅；日期寫查證當天
+- **commit message 要記錄該日已確認**：標題與第一段寫明是哪一天、何時確認，其餘異動列在後面
+- `.claude/settings.json` 設有 PreToolUse hook，執行 `git commit` 前會列出 `days/` 內尚未標記 ✅ 的日期，提醒審核
+
 ## 檔案的擁有者
 
 這點決定哪些檔案可以改：
@@ -35,14 +48,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 1. `/discuss-itinerary` — 討論前強制先讀完 `itinerary.md`、`transportations/` 全部檔案、`days/` 全部檔案、`assets/reference_website.md` 與 `assets/website_abstract.md`。**未讀完不得提出任何行程建議**。
 2. 與使用者討論；需要即時資訊（票價、時刻表、公休日）用 WebSearch 查證，使用者給網址則 WebFetch。
-3. `/update-itinerary` — 有行程變動時，先把即將異動的檔案歸檔到 `archive/{YYYYMMDD-HHMM}/`，再同步 `itinerary.md` 與受影響的 `days/MMDD.md`。
-4. `/save-website-abstract` — **只要本次討論抓取過任何網站就必須執行**，把尚無摘要的網站補寫進 `assets/website_abstract.md`。
+3. `/update-itinerary` — 有行程變動時，先把即將異動的檔案歸檔到 `archive/{YYYYMMDD-HHMM}/`，再同步 `itinerary.md` 與受影響的 `days/MMDD.md`；若異動涉及新的交通節點，會接著呼叫 `build-transportation`。
+4. `/build-transportation` — 盤點各日行經的車站、港口、巴士站、機場與市內交通系統，**先列出待建置節點清單並取得使用者同意**，再為同意的節點建立 `transportations/` 檔案並在對應 `days/` 標頭加上連結。也可單獨呼叫。
+5. `/save-website-abstract` — **只要本次討論抓取過任何網站就必須執行**，把尚無摘要的網站補寫進 `assets/website_abstract.md`。
 
 ## 格式規範重點
 
-完整規範在 `.claude/skills/update-itinerary/reference/`（`itinerary_format.md`、`day_format.md`）與 `.claude/skills/save-website-abstract/reference/website_abstract_format.md`，編輯前先讀。跨檔案共通的重點：
+完整規範在 `.claude/skills/update-itinerary/reference/`（`itinerary_format.md`、`day_format.md`、`transportation_format.md`）與 `.claude/skills/save-website-abstract/reference/website_abstract_format.md`，編輯前先讀。跨檔案共通的重點：
 
 - 檔名月日補零：`days/0903.md`、`transportations/OKJ_OkayamaStation.md`（`OKJ` 為岡山桃太郎機場 IATA 代碼，格式為 `起訖點代碼_路段.md`）
+- 交通指南**不放時刻表**（只寫班距與首末班提醒，時刻表給官方連結）；車站構造圖 PDF 放 `assets/` 並以 `../assets/xxx.pdf` 連結；**同一條動線寫在同一個檔案**，不因換交通工具而拆檔
 - 景點一律加 Google Maps 搜尋連結：`https://www.google.com/maps/search/?api=1&query={搜尋詞}`（搜尋詞用日文原名）
 - 每日檔只有 `## 行程` 必填；`## 時間表` 在抵達日與回程日必填；`## 交通` 僅跨城市或多段轉乘日使用
 - **備案**（雨天、體力不足、班機延誤）寫在 `## 行程` 區塊內用粗體標示，不另開章節
