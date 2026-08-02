@@ -17,7 +17,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 其他檔案：
 
 - `luggage_items.md` — 行李清單（checkbox 格式，含鋰電池新規等航空限制）
-- `itinerary_draft.md` — `trip-planner` 代理人的輸出草稿，**不是正式行程**；正式內容以 `itinerary.md` 與 `days/` 為準
+- `itinerary_draft.md` — `trip-planner` 代理人的輸出路徑，**平時不存在**，只在呼叫該代理人時產生；屬草稿而非正式行程，正式內容一律以 `itinerary.md` 與 `days/` 為準，草稿內容併入後即可刪除
 - `archive/{YYYYMMDD-HHMM}/` — `/update-itinerary` 在每次改動前自動留下的變更前副本，維持原有相對路徑；**唯讀，不刪除也不覆寫既有目錄**
 
 ## 每日行程的確認狀態

@@ -15,3 +15,4 @@
 - [岡山機場交通指南](https://tc.tabirai.net/sightseeing/article/okayama-airport-access/)
 - [岡山自由行攻略：必吃美食、住宿推薦、景點必去清單，購物伴手禮全收錄]( https://chugoku.letsgojp.com/archives/535959/)
 - [岡山超值套票｜岡山樂享周遊券 Have Fun in Okayama 1 Week Free Pass](https://www.kkday.com/zh-tw/product/150149?cid=11798&pkg_oid=1362793)
+- [岡山桃太郎機場官方（繁中）— 巴士交通與時刻表](https://www.okayama-airport.org/tw/access/bus)
