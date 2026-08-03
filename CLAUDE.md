@@ -6,32 +6,59 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 個人旅遊規劃資料庫，記錄 2026/08/28–09/05 日本岡山・倉敷・尾道 9 天 8 晚之旅。內容全部是 Markdown 與 PDF，**不是軟體專案**：沒有建置、測試、lint 指令，唯一的「執行」動作是編輯 Markdown 並用 git 版控。
 
-## 資料架構
+## 檔案與資料夾架構
 
 三層結構，改動時必須同層與跨層一起維持一致：
 
-1. **`itinerary.md`（單一事實來源）** — 行程總覽索引，含航班、住宿分段、行程總覽表格與**行程原則**。所有硬性限制（早出發時間、住宿不換點、班機緩衝）都寫在「行程原則」，任何行程調整必須先對照這一節，不符合就是要先跟使用者確認的改動。此檔只放一行摘要，細節一律放 `days/`。
-2. **`days/MMDD.md`（每日細節）** — 0828–0905 共 9 檔。`itinerary.md` 表格的日期欄以 `[MM/DD](days/MMDD.md)` 連回。
-3. **`transportations/` 與 `assets/`（支援資料）** — 交通指南與參考資料，被上面兩層引用。
+- **`itinerary.md`（行程總覽索引）**：含基本航班、住宿分段、行程總覽表格與**行程原則**。所有硬性限制（早出發時間、住宿不換點、班機緩衝）都寫在「行程原則」，任何行程調整必須先對照這一節，不符合就是要先跟使用者確認的改動。此檔只放一行摘要，細節一律放 `days/`。
+- **`days/`（每日細節）**：記錄每日行程要點，包括交通、時間表、行程、費用預估與注意事項。
+- **`transportations/` (交通節點)**：記錄行程中重要的交通節點或節點間資訊，例如主要出入境與轉機機場資訊、轉乘與路經車站等資訊。共有三種內容：
+  - **重要交通起終點連通資訊**：重要的行程中交通說明，例如：`OKJ_OkayamaStation.md` 代表由出入境機場岡山機場至岡山車站的說明，由於這影響主要行程，因此特別獨立檔案說明。
+  - **單一車站**：提供包括站點的建築結構與內部環境、與行程有關之基本時間提示等。
+  - **市內交通系統**：與單一車站類似，但主要是說明該市內交通的使用方式，例如當地地鐵、公車系統等。
+
+> `days/` 由 `itinerary.md` 的行程總覽表格連結；`transportations/` 不掛在 `itinerary.md` 下，而是由各 `days/yyyyMMDD.md` 標頭連結過去。
 
 其他檔案：
 
+- `README.md` — 對外索引，包括 `itinerary.md`、`luggage_items.md`，含每日行程與交通指南的完整連結表；新增或移除 `days/`、`transportations/` 檔案時要同步更新。
+- `assets/`（支援資料） — 主要是使用者提供的額外資料，例如電子機票、旅館預定紀錄等，被上面三層所引用；另含使用者維護的網址索引 `reference_website.md`、Claude 寫入的網站摘要 `website_abstract.md`，以及 `build-transportation` 下載的車站構造圖 PDF，擁有者見下方表格。
 - `luggage_items.md` — 行李清單（checkbox 格式，含鋰電池新規等航空限制）
-- `itinerary_draft.md` — `trip-planner` 代理人的輸出路徑，**平時不存在**，只在呼叫該代理人時產生；屬草稿而非正式行程，正式內容一律以 `itinerary.md` 與 `days/` 為準，草稿內容併入後即可刪除
 - `archive/{YYYYMMDD-HHMM}/` — `/update-itinerary` 在每次改動前自動留下的變更前副本，維持原有相對路徑；**唯讀，不刪除也不覆寫既有目錄**
+
+## 工作流程
+
+各技能的執行細節寫在自己的 `SKILL.md`，這裡只定順序與時機：
+
+1. `/discuss-itinerary` — 每次討論行程前先跑，讀完全部資料才能提建議。
+2. 與使用者討論；需要即時資訊（票價、時刻表、公休日）用 WebSearch 查證，使用者給網址則 WebFetch。
+3. `/update-itinerary` — 有行程變動時跑，會自行歸檔並視需要接著呼叫 `build-transportation`。
+4. `/build-transportation` — 有新交通節點時跑，也可單獨呼叫。
+5. `/save-website-abstract` — **本次討論只要抓取過任何網站就必須跑**。
 
 ## 每日行程的確認狀態
 
-`days/MMDD.md` 開頭若有這一列，代表該日資料已逐項查證過：
+`days/yyyyMMDD.md` 開頭若有這一列，代表該日資料使用者已經「**初步**」逐項查證過：
 
 ```markdown
 > ✅ **YYYY.MM.DD 資訊已初步確認**
 ```
 
+若有這一列，代表該日資料使用者已經「**完整**」逐項查證過，可以視為不會再修改的檔案內容：
+
+```markdown
+> ✅ **YYYY.MM.DD 資訊已確認**
+```
+
 - **沒有這一列的日子，資料尚未查證**，提出建議前要重新確認營業時間、票價與班次
-- 完成一日查證後，主動詢問使用者是否加上橫幅；日期寫查證當天
+- 橫幅**由使用者決定**，Claude 不代填、不代改；完成一日查證後主動詢問是否加上，日期寫查證當天
+- 隨時可用這兩行分別列出兩種狀態（與 commit hook 同一組判斷）：
+  ```bash
+  grep -LE "^> ✅" days/*.md              # 完全未查證
+  grep -lE "^> ✅.*初步確認" days/*.md     # 只到初步，仍需複查
+  ```
 - **commit message 要記錄該日已確認**：標題與第一段寫明是哪一天、何時確認，其餘異動列在後面
-- `.claude/settings.json` 設有 PreToolUse hook，執行 `git commit` 前會列出 `days/` 內尚未標記 ✅ 的日期，提醒審核
+- `.claude/settings.json` 設有 PreToolUse hook，執行 `git commit` 前會分別列出「尚未查證」與「僅初步確認」的日期，提醒審核
 
 ## 檔案的擁有者
 
@@ -41,33 +68,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 |------|--------|------|
 | `assets/reference_website.md` | 使用者 | **只讀不寫**，網址索引由使用者維護 |
 | `assets/website_abstract.md` | Claude | 由 `/save-website-abstract` 寫入，依交通／美食／購物／景點／行李準備分類 |
-| `.claude/skills/*/reference/*.md` | 格式規範 | **不修改**，是被引用的規範來源 |
+| `.claude/skills/*/reference/*.md` | 格式規範 | 平時視為規範來源**只讀不寫**，**使用者明確要求時才改** |
 | `itinerary.md`、`days/`、`transportations/` | 共同 | 經討論確認後由 `/update-itinerary` 更新 |
 
-## 工作流程
+## 技能清單
 
-1. `/discuss-itinerary` — 討論前強制先讀完 `itinerary.md`、`transportations/` 全部檔案、`days/` 全部檔案、`assets/reference_website.md` 與 `assets/website_abstract.md`。**未讀完不得提出任何行程建議**。
-2. 與使用者討論；需要即時資訊（票價、時刻表、公休日）用 WebSearch 查證，使用者給網址則 WebFetch。
-3. `/update-itinerary` — 有行程變動時，先把即將異動的檔案歸檔到 `archive/{YYYYMMDD-HHMM}/`，再同步 `itinerary.md` 與受影響的 `days/MMDD.md`；若異動涉及新的交通節點，會接著呼叫 `build-transportation`。
-4. `/build-transportation` — 盤點各日行經的車站、港口、巴士站、機場與市內交通系統，**先列出待建置節點清單並取得使用者同意**，再為同意的節點建立 `transportations/` 檔案並在對應 `days/` 標頭加上連結。也可單獨呼叫。
-5. `/save-website-abstract` — **只要本次討論抓取過任何網站就必須執行**，把尚無摘要的網站補寫進 `assets/website_abstract.md`。
+`.claude/skills/` 目前有五個技能：
+
+| 技能 | 用途 | 呼叫方式 |
+|------|------|----------|
+| `discuss-itinerary` | 討論前讀完全部行程、交通指南與參考資源 | 使用者 `/discuss-itinerary`，Claude 也可自行判斷使用 |
+| `update-itinerary` | 歸檔舊版後，同步 `itinerary.md` 與 `days/yyyyMMDD.md` | **只能由使用者呼叫**（frontmatter 設 `disable-model-invocation: true`） |
+| `build-transportation` | 盤點交通節點，建立或補充 `transportations/` 指南 | 使用者呼叫，或由 `update-itinerary` 接續呼叫 |
+| `save-website-abstract` | 把本次抓取的網站整理成摘要寫入 `assets/website_abstract.md` | 使用者呼叫；抓過網站就該執行 |
+| `tw-opendata-transportation` | 台灣交通部 OpenData 批次資料（台鐵、高鐵、捷運、公路客運、民航的路線／站點／票價／時刻表／運量統計） | **暫時不使用**，查的是台灣端的交通資料，本次行程日本段用不到，**目前不呼叫**；需要查桃園機場聯外或台鐵、高鐵時再由使用者明確指示啟用 |
 
 ## 格式規範重點
 
-完整規範在 `.claude/skills/update-itinerary/reference/`（`itinerary_format.md`、`day_format.md`、`transportation_format.md`）與 `.claude/skills/save-website-abstract/reference/website_abstract_format.md`，編輯前先讀。跨檔案共通的重點：
+基本格式規範細節定義於技能 `update-itinerary` 與 `save-website-abstract` 之中，可藉由修改兩項技能來調整所需行程格式。以下僅是主要的重要規範重點內容摘錄：
 
-- 檔名月日補零：`days/0903.md`、`transportations/OKJ_OkayamaStation.md`（`OKJ` 為岡山桃太郎機場 IATA 代碼，格式為 `起訖點代碼_路段.md`）
-- 交通指南**不放時刻表**（只寫班距與首末班提醒，時刻表給官方連結）；車站構造圖 PDF 放 `assets/` 並以 `../assets/xxx.pdf` 連結；**同一條動線寫在同一個檔案**，不因換交通工具而拆檔
-- 景點一律加 Google Maps 搜尋連結：`https://www.google.com/maps/search/?api=1&query={搜尋詞}`（搜尋詞用日文原名）
-- 每日檔只有 `## 行程` 必填；`## 時間表` 在抵達日與回程日必填；`## 交通` 僅跨城市或多段轉乘日使用
-- **備案**（雨天、體力不足、班機延誤）寫在 `## 行程` 區塊內用粗體標示，不另開章節
-- 檔頭 `> ⚠️` 放需事先預約的項目；檔尾 `> ⚠️` 放出發前需再確認的營業時間與公休日
-- 某日從行程移除時**不刪檔**，在檔案開頭加註 `> 此日已從行程移除（YYYY/MM/DD）`
-- 網站摘要每條寫具體事實（金額、時間、班次、公休日），不寫廣告語；抓取失敗（403／逾時）就跳過該 URL 並在回報中說明，不建立空條目
+- `days/` 檔名格式為 `yyyyMMDD.md`，例如 `days/20260903.md`
+- `transportations/` 檔名分路段、單一車站、市內交通系統三種，命名規則見 `transportation_format.md`
 
 ## 代理人
 
-`.claude/agents/trip-planner.md`（規劃草稿，輸出 `itinerary_draft.md`）、`.claude/agents/trip-reviewer.md`（只審查不修改，依嚴重／警告／建議三級回報）。使用者明確要求以代理人進行時才使用。
+> ⚠️ **不能直接引用**。僅有使用者明確要求以代理人進行時才使用。代理人設計尚未完善，可能會有意外之錯誤。
+
+- `.claude/agents/trip-planner.md`（規劃草稿，輸出 `itinerary_draft.md`）。
+- `.claude/agents/trip-reviewer.md`（只審查不修改，依嚴重／警告／建議三級回報）。
 
 ## 環境限制
 

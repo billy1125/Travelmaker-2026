@@ -27,7 +27,7 @@ allowed-tools: Read Write Edit Glob Grep Bash WebFetch WebSearch
 ### 2. 盤點行程節點
 
 - 讀 `itinerary.md` 掌握各日主題與住宿分段
-- 讀 `days/` 內全部 `MMDD.md`，逐日抓出交通節點（看「交通」表格、「時間表」中的移動段落、標頭連結）
+- 讀 `days/` 內全部 `yyyyMMDD.md`，逐日抓出交通節點（看「交通」表格、「時間表」中的移動段落、標頭連結）
 - 整理成清單：**節點名稱｜使用日期（可能多日）｜用途（出發／抵達／轉乘／寄放行李）**
 
 ### 3. 比對既有指南
@@ -81,13 +81,13 @@ allowed-tools: Read Write Edit Glob Grep Bash WebFetch WebSearch
 
 依 `transportation_format.md` 的範本撰寫，並確保：
 
-- 「本次行程使用規劃」章節對應到實際日期與 `days/MMDD.md` 的安排
+- 「本次行程使用規劃」章節對應到實際日期與 `days/yyyyMMDD.md` 的安排
 - 與 `days/` 現有內容衝突時（票價調漲、路線名稱錯誤等），在指南中以 `> ⚠️` 標明差異並指出以官方現行公告為準
 - 現場容易踩到的坑用 `> ⚠️` 獨立標示
 
 ### 7. 連結回每日行程
 
-在對應 `days/MMDD.md` 標頭加入連結：
+在對應 `days/yyyyMMDD.md` 標頭加入連結：
 
 ```markdown
 - **車站指南**：[{名稱}](../transportations/{檔名}.md)（{當天實際會用到的部分}）

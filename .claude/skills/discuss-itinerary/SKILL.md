@@ -22,7 +22,7 @@ allowed-tools: Read Glob WebFetch WebSearch
 
 ### 3. 讀取每日行程
 
-讀取 `days/` 內所有 `.md` 檔案（`0828.md` 至 `0905.md`，共 9 個）。
+讀取 `days/` 內所有 `.md` 檔案（`20260828.md` 至 `20260905.md`，共 9 個）。
 
 ### 4. 向使用者報告已就緒，摘要現況
 
@@ -44,7 +44,7 @@ allowed-tools: Read Glob WebFetch WebSearch
 ## 討論中的原則
 
 - 未完成步驟 1–3 的讀取前，不進行任何行程建議或修改
-- 行程建議需對應到具體的 `days/MMDD.md` 或 `itinerary.md` 的現有內容
+- 行程建議需對應到具體的 `days/yyyyMMDD.md` 或 `itinerary.md` 的現有內容
 - 每次討論結束，若有任何行程變動，提醒使用者執行 `/update-itinerary` 同步檔案
 - 若本次討論中有抓取新網站內容，提醒使用者執行步驟 4（整理至 `assets/website_abstract.md`）
 - 所有討論使用繁體中文

@@ -71,9 +71,9 @@
 
 | 時段 | 動作 |
 |---|---|
-| 07:50 | 飯店（岡山站東口）步行至[岡山駅前電停](https://www.google.com/maps/search/?api=1&query=岡山駅前電停)，注意需走到桃太郎大通路中央 |
-| 08:00 | 搭**東山本線（往東山方向）**，約 5 分鐘、**160 円** |
-| 08:05 左右 | [城下電停](https://www.google.com/maps/search/?api=1&query=城下電停+岡山)下車 → 步行約 8 分到[後樂園](https://www.google.com/maps/search/?api=1&query=岡山後楽園)正門、約 9 分到[岡山城](https://www.google.com/maps/search/?api=1&query=岡山城) |
+| 07:00 | 飯店（岡山站東口）步行至[岡山駅前電停](https://www.google.com/maps/search/?api=1&query=岡山駅前電停)，注意需走到桃太郎大通路中央 |
+| 07:10 | 搭**東山本線（往東山方向）**，約 5 分鐘、**160 円** |
+| 07:15–07:25 左右 | [城下電停](https://www.google.com/maps/search/?api=1&query=城下電停+岡山)下車 → 步行約 8 分到[後樂園](https://www.google.com/maps/search/?api=1&query=岡山後楽園)正門（夏季 07:30 開園，剛好趕上開園）、約 9 分到[岡山城](https://www.google.com/maps/search/?api=1&query=岡山城) |
 | 回程 | 縣廳通り或西大寺町電停上車（逛完表町商店街後），回岡山駅前 |
 
 ### 其他可用時機

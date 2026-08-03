@@ -8,7 +8,7 @@
             "type": "command",
             "if": "Bash(git commit*)",
             "statusMessage": "檢查每日行程確認狀態…",
-            "command": "m=$(grep -LE \"^> ✅.*確認\" days/*.md 2>/dev/null | sed \"s|days/||;s|\\.md||\" | sort | tr \"\\n\" \" \"); if [ -n \"$m\" ]; then printf '{\"systemMessage\":\"commit 前請審核每日行程確認狀態：尚未標記 ✅ 的日期 → %s\"}\\n' \"$m\"; else printf '{\"systemMessage\":\"days/ 內每日行程皆已標記 ✅ 確認\"}\\n'; fi"
+            "command": "n=$(grep -LE \"^> ✅\" days/*.md 2>/dev/null | sed \"s|days/||;s|\\.md||\" | sort | tr \"\\n\" \" \"); p=$(grep -lE \"^> ✅.*初步確認\" days/*.md 2>/dev/null | sed \"s|days/||;s|\\.md||\" | sort | tr \"\\n\" \" \"); if [ -n \"$n\" ] || [ -n \"$p\" ]; then printf '{\"systemMessage\":\"commit 前請審核每日行程確認狀態：尚未查證 → %s｜僅初步確認 → %s\"}\\n' \"${n:-無}\" \"${p:-無}\"; else printf '{\"systemMessage\":\"days/ 內每日行程皆已完整確認\"}\\n'; fi"
           }
         ]
       }
@@ -19,8 +19,8 @@
       "Bash(pip install:*)",
       "Bash(pip3 install:*)",
       "Bash(python -m pip:*)",
-      "Bash(python:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(python:*)"
     ],
     "allow": [
       "Bash(conda run -n claudecode:*)"

@@ -24,7 +24,7 @@ allowed-tools: Read Write Edit Bash PowerShell
 2. 建立 `archive/{時間戳}/` 目錄（若同一分鐘內已存在，沿用該目錄）
 3. 將即將異動的檔案依原有相對路徑複製過去，例如：
    - `itinerary.md` → `archive/20260802-1030/itinerary.md`
-   - `days/0830.md` → `archive/20260802-1030/days/0830.md`
+   - `days/20260830.md` → `archive/20260802-1030/days/20260830.md`
 
 規則：
 
@@ -38,7 +38,7 @@ allowed-tools: Read Write Edit Bash PowerShell
 
 - 標頭（天數、日期、航班、住宿安排）
 - 行程總覽表格（日期用 `MM/DD` 補零、住宿、摘要）
-- 表格日期欄連結格式：`[MM/DD](days/MMDD.md)`
+- 表格日期欄連結格式：`[MM/DD](days/yyyyMMDD.md)`
 - 行程原則（如有調整）
 
 ### 3. 更新每日檔案
@@ -47,7 +47,7 @@ allowed-tools: Read Write Edit Bash PowerShell
 
 **檔案處置**
 
-- 檔名格式：`MMDD.md`（月日補零，不含標題）
+- 檔名格式：`yyyyMMDD.md`（西元年四位、月日各兩位補零，不含標題）
 - 若已存在：直接更新內容
 - 若為新日期：建立新檔案
 - 若某日移除：不刪除舊檔，在檔案開頭加註 `> 此日已從行程移除（YYYY/MM/DD）`
