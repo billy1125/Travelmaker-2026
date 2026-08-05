@@ -17,16 +17,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - **單一車站**：提供包括站點的建築結構與內部環境、與行程有關之基本時間提示等。
   - **市內交通系統**：與單一車站類似，但主要是說明該市內交通的使用方式，例如當地地鐵、公車系統等。
 
-- **`hotel/`（旅宿指南）**：一間旅宿一個檔案，記錄訂房事實（確認碼、PIN、日期、房型、人數、房價、取消政策）、館內設施與時間、房內設備、特殊規定、周邊生活機能、本次行程使用規劃，以及**四個情境的英日文聯絡信件**（行前確認／入住與鑰匙／抵達時間變更／行李寄放與其他需求）。訂房事實一律以 `assets/` 的訂房確認單 PDF 為準，網路查到的資料不覆蓋它。
-
-> `days/` 由 `itinerary.md` 的行程總覽表格連結；`transportations/` 與 `hotel/` 不掛在 `itinerary.md` 下，而是由各 `days/yyyyMMDD.md` 標頭連結過去。
+> `days/` 由 `itinerary.md` 的行程總覽表格連結；`transportations/` 不掛在 `itinerary.md` 下，而是由各 `days/yyyyMMDD.md` 標頭連結過去。
 
 其他檔案：
 
-- `README.md` — 對外索引，包括 `itinerary.md`、`luggage_items.md`，含每日行程、交通指南與旅宿指南的完整連結表；新增或移除 `days/`、`transportations/`、`hotel/` 檔案時要同步更新。
-- `assets/`（支援資料） — 主要是使用者提供的額外資料，例如電子機票、旅館預定紀錄等，被上面各層所引用；另含使用者維護的網址索引 `reference_website.md`、Claude 寫入的網站摘要 `website_abstract.md`，以及 `build-transportation` 下載的車站構造圖 PDF，擁有者見下方表格。
-
-  > 本環境沒有 `pdftoppm`，Read 工具**無法直接讀 PDF**。需要讀訂房確認單等 PDF 時，用 conda 環境的 PyMuPDF（`fitz`）寫一支腳本抽文字到暫存 `.txt` 再讀。`conda run` 不支援含換行的 `-c` 參數，腳本要寫成檔案；也不要讓腳本 print 中日文，`conda run` 的 stdout 是 cp950 會爆。
+- `README.md` — 對外索引，包括 `itinerary.md`、`luggage_items.md`，含每日行程與交通指南的完整連結表；新增或移除 `days/`、`transportations/` 檔案時要同步更新。
+- `assets/`（支援資料） — 主要是使用者提供的額外資料，例如電子機票、旅館預定紀錄等，被上面三層所引用；另含使用者維護的網址索引 `reference_website.md`、Claude 寫入的網站摘要 `website_abstract.md`，以及 `build-transportation` 下載的車站構造圖 PDF，擁有者見下方表格。
 - `luggage_items.md` — 行李清單（checkbox 格式，含鋰電池新規等航空限制）
 - `archive/{YYYYMMDD-HHMM}/` — `/update-itinerary` 在每次改動前自動留下的變更前副本，維持原有相對路徑；**唯讀，不刪除也不覆寫既有目錄**
 
@@ -38,8 +34,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 2. 與使用者討論；需要即時資訊（票價、時刻表、公休日）用 WebSearch 查證，使用者給網址則 WebFetch。
 3. `/update-itinerary` — 有行程變動時跑，會自行歸檔並視需要接著呼叫 `build-transportation`。
 4. `/build-transportation` — 有新交通節點時跑，也可單獨呼叫。
-5. `/build-hotel` — 有新旅宿或訂房內容變動時跑，也可單獨呼叫。
-6. `/save-website-abstract` — **本次討論只要抓取過任何網站就必須跑**。
+5. `/save-website-abstract` — **本次討論只要抓取過任何網站就必須跑**。
 
 ## 每日行程的確認狀態
 
@@ -75,28 +70,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `assets/website_abstract.md` | Claude | 由 `/save-website-abstract` 寫入，依交通／美食／購物／景點／行李準備分類 |
 | `.claude/skills/*/reference/*.md` | 格式規範 | 平時視為規範來源**只讀不寫**，**使用者明確要求時才改** |
 | `itinerary.md`、`days/`、`transportations/` | 共同 | 經討論確認後由 `/update-itinerary` 更新 |
-| `hotel/` | 共同 | 經討論確認後由 `/build-hotel` 更新；訂房事實以 `assets/` 的訂房 PDF 為準 |
 
 ## 技能清單
 
-`.claude/skills/` 目前有六個技能：
+`.claude/skills/` 目前有五個技能：
 
 | 技能 | 用途 | 呼叫方式 |
 |------|------|----------|
 | `discuss-itinerary` | 討論前讀完全部行程、交通指南與參考資源 | 使用者 `/discuss-itinerary`，Claude 也可自行判斷使用 |
 | `update-itinerary` | 歸檔舊版後，同步 `itinerary.md` 與 `days/yyyyMMDD.md` | **只能由使用者呼叫**（frontmatter 設 `disable-model-invocation: true`） |
 | `build-transportation` | 盤點交通節點，建立或補充 `transportations/` 指南 | 使用者呼叫，或由 `update-itinerary` 接續呼叫 |
-| `build-hotel` | 盤點旅宿，建立或補充 `hotel/` 指南與英日文聯絡信件 | 使用者呼叫，Claude 也可自行判斷使用；建檔前一定要先取得使用者同意 |
 | `save-website-abstract` | 把本次抓取的網站整理成摘要寫入 `assets/website_abstract.md` | 使用者呼叫；抓過網站就該執行 |
 | `tw-opendata-transportation` | 台灣交通部 OpenData 批次資料（台鐵、高鐵、捷運、公路客運、民航的路線／站點／票價／時刻表／運量統計） | **暫時不使用**，查的是台灣端的交通資料，本次行程日本段用不到，**目前不呼叫**；需要查桃園機場聯外或台鐵、高鐵時再由使用者明確指示啟用 |
 
 ## 格式規範重點
 
-基本格式規範細節定義於技能 `update-itinerary` 與 `save-website-abstract` 之中，可藉由修改兩項技能來調整所需行程格式。`hotel/` 的格式規範同樣放在 `update-itinerary/reference/`，由 `build-hotel` 以相對路徑引用。以下僅是主要的重要規範重點內容摘錄：
+基本格式規範細節定義於技能 `update-itinerary` 與 `save-website-abstract` 之中，可藉由修改兩項技能來調整所需行程格式。以下僅是主要的重要規範重點內容摘錄：
 
 - `days/` 檔名格式為 `yyyyMMDD.md`，例如 `days/20260903.md`
 - `transportations/` 檔名分路段、單一車站、市內交通系統三種，命名規則見 `transportation_format.md`
-- `hotel/` 檔名為 PascalCase 英文旅館名，連鎖品牌加地點後綴，例如 `hotel/SuperHotelOkayamaHigashiguchi.md`，規則見 `hotel_format.md`
 
 ## 代理人
 

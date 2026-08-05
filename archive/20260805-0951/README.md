@@ -44,22 +44,13 @@
 
 交通指南**不放時刻表**，只寫班距與首末班提醒，完整時刻表以各檔結尾的官方連結為準。
 
-## 旅宿資訊
-
-| 檔案 | 內容 |
-|---|---|
-| [Super Hotel 岡山駅東口](hotel/SuperHotelOkayamaHigashiguchi.md) | 08/28–08/31，3 晚｜含早餐與天然溫泉，設施時間、周邊機能與英日文聯絡信件 |
-| [Yutori by b hotel（尾道）](hotel/YutoriByBHotelOnomichi.md) | 08/31–09/05，5 晚｜公寓式無人櫃台，入住與智慧鎖流程、周邊機能與英日文聯絡信件 |
-
-旅宿指南的訂房事實（確認碼、日期、房型、房價、取消政策）一律以 `assets/` 的訂房確認單 PDF 為準；每份指南附四個情境的英日文聯絡信件，可直接複製寄給館方。
-
 ## 其他資料
 
 | 路徑 | 說明 |
 |---|---|
 | [luggage_items.md](luggage_items.md) | 行李清單（checkbox 格式，含鋰電池等航空限制） |
 | [assets/reference_website.md](assets/reference_website.md) | 參考網站索引（由使用者維護） |
-| [assets/website_abstract.md](assets/website_abstract.md) | 參考網站摘要，依交通／美食／購物／景點／住宿／行李準備分類 |
+| [assets/website_abstract.md](assets/website_abstract.md) | 參考網站摘要，依交通／美食／購物／景點分類 |
 | `assets/*.pdf` | 電子機票、飯店確認書、岡山／倉敷／尾道車站構造圖 |
 | `archive/{YYYYMMDD-HHMM}/` | 每次行程異動前的自動備份（唯讀） |
 | `.claude/` | Claude Code 技能與代理人設定 |

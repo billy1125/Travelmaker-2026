@@ -23,14 +23,15 @@ allowed-tools: Read Write Edit Glob WebFetch mcp__twinkle-hub__twtools-fetch_url
 ### 3. 確認或建立 assets/website_abstract.md
 
 - 讀取 `assets/website_abstract.md`（若存在）
-- 若檔案不存在，依 `reference/website_abstract_format.md` 的範本建立初始結構（含四個空白分類區塊）
+- 若檔案不存在，依 `reference/website_abstract_format.md` 的範本建立初始結構（含六個空白分類區塊）
 
 ### 4. 為每個新網站撰寫摘要
 
 針對每個需要整理的 URL：
 
-1. **判斷分類**（交通 / 美食 / 購物 / 景點）  
+1. **判斷分類**（交通 / 美食 / 購物 / 景點 / 住宿 / 行李準備）  
    若網站涵蓋多類，選最主要的分類；在「適用範圍」欄位說明其他面向。
+   旅館官網與訂房頁歸「住宿」，但**細節寫進 `hotel/` 的旅宿指南，這裡只留摘要**。
 
 2. **撰寫摘要條目**，格式如下：
 
@@ -59,7 +60,7 @@ allowed-tools: Read Write Edit Glob WebFetch mcp__twinkle-hub__twtools-fetch_url
 
 ### 5. 寫入 assets/website_abstract.md
 
-將各條目寫入對應的分類區塊（交通 / 美食 / 購物 / 景點）：
+將各條目寫入對應的分類區塊（交通 / 美食 / 購物 / 景點 / 住宿 / 行李準備）：
 
 - 用 Edit 工具將新條目插入對應分類區塊的末尾
 - 更新檔案頂部的「更新日」為今日日期
