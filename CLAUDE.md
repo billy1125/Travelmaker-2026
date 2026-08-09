@@ -27,7 +27,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `assets/`（支援資料） — 主要是使用者提供的額外資料，例如電子機票、旅館預定紀錄等，被上面各層所引用；另含使用者維護的網址索引 `reference_website.md`、Claude 寫入的網站摘要 `website_abstract.md`，以及 `build-transportation` 下載的車站構造圖 PDF，擁有者見下方表格。
 
   > 本環境沒有 `pdftoppm`，Read 工具**無法直接讀 PDF**。需要讀訂房確認單等 PDF 時，用 conda 環境的 PyMuPDF（`fitz`）寫一支腳本抽文字到暫存 `.txt` 再讀。`conda run` 不支援含換行的 `-c` 參數，腳本要寫成檔案；也不要讓腳本 print 中日文，`conda run` 的 stdout 是 cp950 會爆。
-- `luggage_items.md` — 行李清單（checkbox 格式，含鋰電池新規等航空限制）
+- `luggage_items.md` — 行李清單（checkbox 格式，含鋰電池新規等航空限制），原則上僅有清單與簡單提示，不放與行程、景點有關資訊。
 - `archive/{YYYYMMDD-HHMM}/` — `/update-itinerary` 在每次改動前自動留下的變更前副本，維持原有相對路徑；**唯讀，不刪除也不覆寫既有目錄**
 
 ## 工作流程
