@@ -18,12 +18,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - **市內交通系統**：與單一車站類似，但主要是說明該市內交通的使用方式，例如當地地鐵、公車系統等。
 
 - **`hotel/`（旅宿指南）**：一間旅宿一個檔案，記錄訂房事實（確認碼、PIN、日期、房型、人數、房價、取消政策）、館內設施與時間、房內設備、特殊規定、周邊生活機能、本次行程使用規劃，以及**四個情境的英日文聯絡信件**（行前確認／入住與鑰匙／抵達時間變更／行李寄放與其他需求）。訂房事實一律以 `assets/` 的訂房確認單 PDF 為準，網路查到的資料不覆蓋它。
+- **`photospots/`（攝影景點）**：**一個城市一個檔案**，檔名為 PascalCase 英文城市名（例：`Onomichi.md`）。記錄拍攝點的位置、Google Maps 連結、**周邊地標**、構圖與時段建議、拍攝注意事項，並附「與本次行程的對應」一節，標明哪些點落在既有動線上、哪些需要額外加排。**這一層只記錄拍攝資訊，不改動行程**；要排進行程仍須經討論後由 `/update-itinerary` 寫入 `days/`。
 
-> `days/` 由 `itinerary.md` 的行程總覽表格連結；`transportations/` 與 `hotel/` 不掛在 `itinerary.md` 下，而是由各 `days/yyyyMMDD.md` 標頭連結過去。
+> `days/` 由 `itinerary.md` 的行程總覽表格連結；`transportations/`、`hotel/` 與 `photospots/` 不掛在 `itinerary.md` 下，而是由各 `days/yyyyMMDD.md` 標頭連結過去（`photospots/` 亦可僅由 `README.md` 索引）。
 
 其他檔案：
 
-- `README.md` — 對外索引，包括 `itinerary.md`、`luggage_items.md`，含每日行程、交通指南與旅宿指南的完整連結表；新增或移除 `days/`、`transportations/`、`hotel/` 檔案時要同步更新。
+- `README.md` — 對外索引，包括 `itinerary.md`、`luggage_items.md`，含每日行程、交通指南、旅宿指南與攝影景點的完整連結表；新增或移除 `days/`、`transportations/`、`hotel/`、`photospots/` 檔案時要同步更新。
 - `assets/`（支援資料） — 主要是使用者提供的額外資料，例如電子機票、旅館預定紀錄等，被上面各層所引用；另含使用者維護的網址索引 `reference_website.md`、Claude 寫入的網站摘要 `website_abstract.md`，以及 `build-transportation` 下載的車站構造圖 PDF，擁有者見下方表格。
 
   > 本環境沒有 `pdftoppm`，Read 工具**無法直接讀 PDF**。需要讀訂房確認單等 PDF 時，用 conda 環境的 PyMuPDF（`fitz`）寫一支腳本抽文字到暫存 `.txt` 再讀。`conda run` 不支援含換行的 `-c` 參數，腳本要寫成檔案；也不要讓腳本 print 中日文，`conda run` 的 stdout 是 cp950 會爆。
@@ -76,6 +77,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `.claude/skills/*/reference/*.md` | 格式規範 | 平時視為規範來源**只讀不寫**，**使用者明確要求時才改** |
 | `itinerary.md`、`days/`、`transportations/` | 共同 | 經討論確認後由 `/update-itinerary` 更新 |
 | `hotel/` | 共同 | 經討論確認後由 `/build-hotel` 更新；訂房事實以 `assets/` 的訂房 PDF 為準 |
+| `photospots/` | 共同 | 查證後直接更新，**不需經 `/update-itinerary`**；但把拍攝點排進行程仍要走 `/update-itinerary` |
 
 ## 技能清單
 

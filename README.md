@@ -38,7 +38,8 @@
 | [JR 尾道站](transportations/OnomichiStation.md) | 出入口、租單車櫃台、往渡船場動線 |
 | [岡山路面電車](transportations/OkayamaTram.md) | 東山本線／清輝橋線分歧、車資與一日券 |
 | [岡山站 → 宇野站・宇野港](transportations/Okayama_Uno.md) | 往直島的鐵路與渡輪全段動線 |
-| [尾道 ⇄ 向島 渡船・租單車](transportations/Onomichi_Mukaishima.md) | 島波海道起點：渡船票價與租單車費率 |
+| [尾道 ⇄ 向島 渡船・租單車](transportations/Onomichi_Mukaishima.md) | 島波海道起點：渡船票價與騎乘路線 |
+| [尾道 租單車（しまなみジャパン）](transportations/OnomichiRentalCycle.md) | 09/03 單車預約內容、據點營業時間與借用規定 |
 | [千光寺山纜車](transportations/OnomichiRopeway.md) | 票價、運行時間與上下山走法 |
 | [尾道 → 福山站 → 鞆之浦](transportations/Fukuyama_Tomonoura.md) | 鞆之浦的鐵路轉巴士動線 |
 
@@ -52,6 +53,14 @@
 | [Yutori by b hotel（尾道）](hotel/YutoriByBHotelOnomichi.md) | 08/31–09/05，5 晚｜公寓式無人櫃台，入住與智慧鎖流程、周邊機能與英日文聯絡信件 |
 
 旅宿指南的訂房事實（確認碼、日期、房型、房價、取消政策）一律以 `assets/` 的訂房確認單 PDF 為準；每份指南附四個情境的英日文聯絡信件，可直接複製寄給館方。
+
+## 攝影景點
+
+| 檔案 | 內容 |
+|---|---|
+| [尾道](photospots/Onomichi.md) | 三大名踏切（拍電車）、千光寺山俯瞰、貓之細道與水岸夜景，含與 09/01–09/03 的對應 |
+
+攝影景點檔以城市分檔，記錄拍攝點位置、Google Maps 連結、周邊地標、構圖與時段建議，並標明哪些點落在既有動線上、哪些需要額外加排。
 
 ## 其他資料
 

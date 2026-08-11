@@ -27,3 +27,5 @@
 - [げんこつ屋（玉野市築港，08/30 晚餐備選）](https://maps.app.goo.gl/iiMbTa5wZEWK4N4s8)
 - [栗原温泉（尾道錢湯，官網）](https://kurihara-onsen.jimdosite.com/)
 - [栗原温泉（エキテン，營業時間與料金）](https://www.ekiten.jp/shop_1593930/)
+- [VISIT SHIMANAMI — 島波海道租單車規定與費率](https://visitshimanami.com/bike-rental/)
+- [しまなみ海道租單車 — 預約查詢與修改](https://www.shimanami-bike-rental.com/confirmid)
