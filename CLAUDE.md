@@ -96,7 +96,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 基本格式規範細節定義於技能 `update-itinerary` 與 `save-website-abstract` 之中，可藉由修改兩項技能來調整所需行程格式。`hotel/` 的格式規範同樣放在 `update-itinerary/reference/`，由 `build-hotel` 以相對路徑引用。以下僅是主要的重要規範重點內容摘錄：
 
-- `days/` 檔名格式為 `yyyyMMDD.md`，例如 `days/20260903.md`
+- `days/` 檔名格式為 `yyyyMMDD.md`，例如 `days/20260901.md`；**同一日備有兩套以上完整互斥方案時**，加英文小寫 slug 後綴寫成 `yyyyMMDD-{slug}.md`（例：`days/20260903-bike.md` 晴天主案、`days/20260903-rain.md` 雨天備案），拆檔條件與交叉連結規則見 `day_format.md`
 - `transportations/` 檔名分路段、單一車站、市內交通系統三種，命名規則見 `transportation_format.md`
 - `hotel/` 檔名為 PascalCase 英文旅館名，連鎖品牌加地點後綴，例如 `hotel/SuperHotelOkayamaHigashiguchi.md`，規則見 `hotel_format.md`
 

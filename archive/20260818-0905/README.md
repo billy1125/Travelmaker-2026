@@ -21,9 +21,8 @@
 | [08/30（Day 3）](days/20260830.md) | 岡山 | 直島一日遊（經宇野港搭船） |
 | [08/31（Day 4）](days/20260831.md) | 尾道 | 岡山退房 → 倉敷中途停留 → 移往尾道 |
 | [09/01（Day 5）](days/20260901.md) | 尾道 | 尾道深度上半：東側古寺（御袖天満宮、西國寺、浄土寺）＋ ONOMICHI U2 |
-| [09/02（Day 6）](days/20260902.md) | 尾道 | 尾道市區深度日：千光寺纜車、**尾道市立美術館**、貓之細道、本通商店街 |
-| [09/03（Day 7）](days/20260903-bike.md) | 尾道 | **晴天主案**：島波海道單車日（向島、因島） |
-| [09/03（Day 7）雨備](days/20260903-rain.md) | 尾道 | **雨天備案**：A 島波海道公車日／B 尾道市區室內日，兩案擇一 |
+| [09/02（Day 6）](days/20260902.md) | 尾道 | 尾道市區深度日：千光寺纜車、貓之細道、本通商店街 |
+| [09/03（Day 7）](days/20260903.md) | 尾道 | 島波海道單車日（向島、因島） |
 | [09/04（Day 8）](days/20260904.md) | 尾道 | 鞆之浦一日遊（經福山） |
 | [09/05（Day 9）](days/20260905.md) | — | 回程：07:00 離開住宿 → 岡山採買 → 12:55 機場巴士 |
 
@@ -39,7 +38,7 @@
 | [JR 尾道站](transportations/OnomichiStation.md) | 出入口、租單車櫃台、往渡船場動線 |
 | [岡山路面電車](transportations/OkayamaTram.md) | 東山本線／清輝橋線分歧、車資與一日券 |
 | [岡山站 → 宇野站・宇野港](transportations/Okayama_Uno.md) | 往直島的鐵路與渡輪全段動線 |
-| [尾道 ⇄ 向島 ⇄ 因島 渡船・租單車・路線巴士](transportations/Onomichi_Mukaishima.md) | 島波海道起點：渡船票價、騎乘路線，以及雨備用的本四バス「因島⇔尾道線」班表 |
+| [尾道 ⇄ 向島 渡船・租單車](transportations/Onomichi_Mukaishima.md) | 島波海道起點：渡船票價與騎乘路線 |
 | [尾道 租單車（しまなみジャパン）](transportations/OnomichiRentalCycle.md) | 09/03 單車預約內容、據點營業時間與借用規定 |
 | [千光寺山纜車](transportations/OnomichiRopeway.md) | 票價、運行時間與上下山走法 |
 | [尾道 → 福山站 → 鞆之浦](transportations/Fukuyama_Tomonoura.md) | 鞆之浦的鐵路轉巴士動線 |
