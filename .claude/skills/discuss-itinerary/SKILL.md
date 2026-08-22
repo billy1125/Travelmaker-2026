@@ -22,7 +22,7 @@ allowed-tools: Read Glob WebFetch WebSearch
 
 ### 3. 讀取每日行程
 
-讀取 `days/` 內所有 `.md` 檔案（`20260828.md` 至 `20260905.md`，共 9 個）。
+讀取 `days/` 內所有 `.md` 檔案（`20260830.md` 至 `20260908.md`，共 11 個，含 09/03 的 bike／rain 兩案）。
 
 ### 4. 向使用者報告已就緒，摘要現況
 

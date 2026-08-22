@@ -32,7 +32,7 @@
 - 山頂站出站即 [千光寺公園展望台 PEAK](https://www.google.com/maps/search/?api=1&query=千光寺公園展望台+尾道)，可俯瞰尾道水道、向島與因島
 - 下山的[文學小徑](https://www.google.com/maps/search/?api=1&query=文学のこみち+尾道)為石板路，**有高低差與碎石**，建議穿好走的鞋
 
-## 本次行程使用規劃（09/02 Day 6）
+## 本次行程使用規劃（09/02 Day 4）
 
 | 時間 | 動作 |
 |---|---|

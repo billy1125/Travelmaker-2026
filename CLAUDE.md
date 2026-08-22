@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 這個專案是什麼
 
-個人旅遊規劃資料庫，記錄 2026/08/28–09/05 日本岡山・倉敷・尾道 9 天 8 晚之旅。內容全部是 Markdown 與 PDF，**不是軟體專案**：沒有建置、測試、lint 指令，唯一的「執行」動作是編輯 Markdown 並用 git 版控。
+個人旅遊規劃資料庫，記錄 2026/08/30–09/08 日本岡山・倉敷・尾道 10 天 9 晚之旅。內容全部是 Markdown 與 PDF，**不是軟體專案**：沒有建置、測試、lint 指令，唯一的「執行」動作是編輯 Markdown 並用 git 版控。
 
 ## 檔案與資料夾架構
 
@@ -27,7 +27,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `README.md` — 對外索引，包括 `itinerary.md`、`luggage_items.md`，含每日行程、交通指南、旅宿指南與攝影景點的完整連結表；新增或移除 `days/`、`transportations/`、`hotel/`、`photospots/` 檔案時要同步更新。
 - `assets/`（支援資料） — 主要是使用者提供的額外資料，例如電子機票、旅館預定紀錄等，被上面各層所引用；另含使用者維護的網址索引 `reference_website.md`、Claude 寫入的網站摘要 `website_abstract.md`，以及 `build-transportation` 下載的車站構造圖 PDF，擁有者見下方表格。
 
-  > 本環境沒有 `pdftoppm`，Read 工具**無法直接讀 PDF**。需要讀訂房確認單等 PDF 時，用 conda 環境的 PyMuPDF（`fitz`）寫一支腳本抽文字到暫存 `.txt` 再讀。`conda run` 不支援含換行的 `-c` 參數，腳本要寫成檔案；也不要讓腳本 print 中日文，`conda run` 的 stdout 是 cp950 會爆。
+  > 本環境沒有 `pdftoppm`，Read 工具**無法直接讀 PDF**。需要讀訂房確認單等 PDF 時，**先問使用者**（要用 PyMuPDF 抽文字，但執行環境不由 Claude 決定，詳見下方「環境限制」）。
 - `luggage_items.md` — 行李清單（checkbox 格式，含鋰電池新規等航空限制），原則上僅有清單與簡單提示，不放與行程、景點有關資訊。
 - `archive/{YYYYMMDD-HHMM}/` — `/update-itinerary` 在每次改動前自動留下的變更前副本，維持原有相對路徑；**唯讀，不刪除也不覆寫既有目錄**
 
@@ -98,7 +98,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `days/` 檔名格式為 `yyyyMMDD.md`，例如 `days/20260901.md`；**同一日備有兩套以上完整互斥方案時**，加英文小寫 slug 後綴寫成 `yyyyMMDD-{slug}.md`（例：`days/20260903-bike.md` 晴天主案、`days/20260903-rain.md` 雨天備案），拆檔條件與交叉連結規則見 `day_format.md`
 - `transportations/` 檔名分路段、單一車站、市內交通系統三種，命名規則見 `transportation_format.md`
-- `hotel/` 檔名為 PascalCase 英文旅館名，連鎖品牌加地點後綴，例如 `hotel/SuperHotelOkayamaHigashiguchi.md`，規則見 `hotel_format.md`
+- `hotel/` 檔名為 PascalCase 英文旅館名，連鎖品牌加地點後綴，例如 `hotel/SmileHotelOkayama.md`，規則見 `hotel_format.md`
 
 ## 代理人
 
@@ -109,4 +109,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 環境限制
 
-`.claude/settings.json` 禁止直接執行 `python`／`pip`，僅允許 `conda run -n claudecode:*`。需要跑 Python 時走 conda 環境。
+`.claude/settings.json` **禁止直接執行 `python`／`pip`，且沒有任何預先允許的 Python 執行規則**。
+
+- **需要跑 Python 時（例如讀 `assets/` 的訂房 PDF），Claude 不要自己挑環境、不要自己決定怎麼跑，一律先問使用者。** 由使用者手動執行後把結果交回。
+- 環境判斷（哪個 conda 環境、有沒有裝 PyMuPDF、conda 在不在 PATH）**都不是 Claude 該自行決定的事**，猜錯只會浪費來回。
+- 所需套件見 `README.md` 的「環境需求」。
