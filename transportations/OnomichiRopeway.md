@@ -4,7 +4,7 @@
 
 | 項目 | 內容 |
 |------|------|
-| 名稱 | [千光寺山ロープウェイ](https://www.google.com/maps/search/?api=1&query=千光寺山ロープウェイ+尾道) |
+| 名稱 | [千光寺山纜車（千光寺山ロープウェイ）](https://www.google.com/maps/search/?api=1&query=千光寺山ロープウェイ+尾道) |
 | 區間 | 山麓站（[長江口](https://www.google.com/maps/search/?api=1&query=長江口+尾道)）⇄ 山頂站（[千光寺公園](https://www.google.com/maps/search/?api=1&query=千光寺公園+尾道)） |
 | 所需時間 | **3 分鐘** |
 | 營運時間 | **09:00–17:15**（依季節延長運轉） |

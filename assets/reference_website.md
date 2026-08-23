@@ -29,3 +29,4 @@
 - [栗原温泉（エキテン，營業時間與料金）](https://www.ekiten.jp/shop_1593930/)
 - [VISIT SHIMANAMI — 島波海道租單車規定與費率](https://visitshimanami.com/bike-rental/)
 - [しまなみ海道租單車 — 預約查詢與修改](https://www.shimanami-bike-rental.com/confirmid)
+- [日本遺產小鎮－鞆之浦10景點散策點名詳細介紹 (含交通、路線、地圖… )](https://look2uptravel.com/post-357344283/)
