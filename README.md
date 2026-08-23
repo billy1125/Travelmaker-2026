@@ -42,8 +42,8 @@
 | [岡山路面電車](transportations/OkayamaTram.md) | 東山本線／清輝橋線分歧、車資與一日券 |
 | [岡山站 → 宇野站・宇野港](transportations/Okayama_Uno.md) | 往直島的鐵路與渡輪全段動線（09/06 Day 8） |
 | [岡山站 → 吉備津站・吉備津神社](transportations/Okayama_Kibitsu.md) | 吉備線（桃太郎線）班次時刻、吉備津神社參拜資訊（09/07 Day 9） |
-| [尾道 ⇄ 向島 ⇄ 因島 渡船・租單車・路線巴士](transportations/Onomichi_Mukaishima.md) | 島波海道起點：渡船票價、騎乘路線，以及雨備用的本四バス「因島⇔尾道線」班表 |
-| [尾道 租單車（しまなみジャパン）](transportations/OnomichiRentalCycle.md) | 09/03（Day 5）單車預約內容、據點營業時間與借用規定 |
+| [尾道 ⇄ 向島 ⇄ 因島 渡船・租單車・路線巴士](transportations/Onomichi_Mukaishima.md) | 島波海道起點：渡船票價、騎乘路線，以及雨備用的本四巴士（本四バス）「因島⇔尾道線」班表 |
+| [尾道 租單車（Shimanami Japan／しまなみジャパン）](transportations/OnomichiRentalCycle.md) | 09/03（Day 5）單車預約內容、據點營業時間與借用規定 |
 | [千光寺山纜車](transportations/OnomichiRopeway.md) | 票價、運行時間與上下山走法 |
 | [尾道 → 福山站 → 鞆之浦](transportations/Fukuyama_Tomonoura.md) | 鞆之浦的鐵路轉巴士動線 |
 
