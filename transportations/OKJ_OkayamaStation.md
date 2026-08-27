@@ -38,7 +38,7 @@
 3. 將大行李交給現場工作人員（**有專人幫忙放置行李艙**）
 4. 對號上車等待發車
 
-> 工作人員親切，流程非常直覺。若不確定，跟著人群走即可。
+> 流程單純，不確定就跟著人群走。
 
 ## 國際線加班車（重要）
 
@@ -142,7 +142,7 @@
 
 ## 網友實用資訊
 
-- **優先參考**：[部屋隆的生活頻道（資訊相當新，僅有一個月左右）](https://youtu.be/WVEGjZrzjYA?si=fkoYPuEf4myJAzQu)
+- **優先參考**：[部屋隆的生活頻道（影片約一個月內發布）](https://youtu.be/WVEGjZrzjYA?si=fkoYPuEf4myJAzQu)
 - [MATCHA — 坐虎航直飛岡山！岡山機場完整攻略](https://matcha-jp.com/tw/19092)
 - [岡山機場完整攻略：美食、伴手禮、免稅店、到市區交通](https://chugoku.letsgojp.com/archives/287441/)
 - [機場巴士超方便！到岡山車站怎麼搭？時刻表＆票價說明](https://lizzzstyle.tw/okayama-airportbus/)
