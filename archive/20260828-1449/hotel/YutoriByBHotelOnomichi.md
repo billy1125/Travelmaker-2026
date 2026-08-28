@@ -10,7 +10,7 @@
 | 日文原名 | 尾道ホテル ゆとり イースト館（bHOTEL Yutori East） |
 | 地址 | 〒722-0038 広島県尾道市天満町 4-5-1（[Google Maps](https://maps.app.goo.gl/2vsFBR8AsV94MBV19)） |
 | GPS | N 034° 24.261, E 133° 11.350 |
-| 入住 | **08/31（一）** 15:00 起｜**11:30 起可先自行把行李搬進房內**，但 15:00 前不能停留（見「入住與退房方式」） |
+| 入住 | **08/31（一）** 15:00 起 |
 | 退房 | **09/05（六）** 11:00 前 |
 | 晚數 | **5 晚**（住宿選項 1） |
 | 房型 | 公寓（1 Bedroom，最多 3 人）：Queen size 床 ×1 ＋ 單人沙發床 ×1 |
@@ -36,9 +36,7 @@
 | 訂房平台客服 | Booking.com 台灣 02-8793-3062／海外與日本 +852-3077-5532（24 小時） |
 | 櫃台 | **無人櫃台，非接觸式入住**；日常聯絡走訂房平台訊息，**電話僅限緊急狀況** |
 
-> ⚠️ **這間住宿的負評多集中在聯絡不易。** 平時請走 Booking.com 訊息，並保留館方回覆截圖。
->
-> ⚠️ **要追的不是密碼，是事前登記。** 依 2026.08.28 館方回信，入室碼固定在**入住當日 09:00** 才發，提前催沒有用；真正會卡住的是事前 check-in 登記沒完成，那樣當天不會收到任何入室指示。**08/30 前確認登記已送出**，當日 09:30 仍未收到訊息再聯絡館方。
+> ⚠️ **這間住宿的負評多集中在聯絡不易。** 平時請走 Booking.com 訊息，並保留館方回覆截圖；抵達前 2–3 天沒收到智慧鎖密碼就要主動追。
 
 ## 交通與位置
 
@@ -56,16 +54,12 @@
 
 | 步驟 | 內容 |
 |------|------|
-| 事前 | **必須先完成事前 check-in 登記（宿泊者情報登録・本人確認）**，日本法規要求。**最晚在入住日前一天（08/30）完成**；未完成則當天不會收到入室指示 |
-| 入室碼 | 登記完成者，館方於**入住當日（08/31）09:00** 以訊息發送入室碼與房間細節 |
+| 事前 | **必須先填寫 check-in form**（日本法規要求）。官方說明：填妥後才會收到自助入住指示，**入住當日日本時間 09:00 前**需完成 |
 | 大門 | 按 **「呼出」鍵**，輸入密碼 **3177** |
-| 房門 | **智慧鎖**，密碼依入住／退房日期產生，即上列當日 09:00 發送的入室碼 |
-| 行李寄放 | **11:30 起**可自行把行李搬進房內。**15:00 前不能停留**（清掃與設備點檢時間）；行李請集中放在房內一處；**入住前要用冰箱須事先以訊息告知**；只放行李也要依當天 09:00 的入室指示進房 |
+| 房門 | **智慧鎖**，密碼依入住／退房日期產生，館方在入住前**另以訊息與 Email 發送** |
 | 離開 | 關門後**按任意鍵即自動上鎖**；**不需歸還鑰匙、不需辦理退房手續** |
 
-> ⚠️ **關鍵待辦是 08/30 前完成事前登記，不是提前要密碼。** 依 2026.08.28 館方回信，入室碼固定當日 09:00 才發；登記沒完成，當天就收不到指示、進不了房間。
-
-> ⚠️ **與先前記錄不同（依 2026.08.28 回信更正）**：事前登記期限原記為「入住當日 09:00 前」，實際是**入住日前一天前**完成，09:00 是館方**發送**入室碼的時間；密碼也不是入住前數日寄出。
+> ⚠️ **智慧鎖密碼是這趟行程最關鍵的待辦事項。** 出發前若沒收到，就進不了房間。用下方第 2 封信提前索取，並確認 check-in form 已送出。
 
 > ⚠️ 09/05 早上 **07:00 直接離開**（退房期限 11:00）。因為是自動上鎖、無人櫃台，提早離開不需通知櫃台，但**垃圾要在前一晚處理掉**。
 
@@ -102,14 +96,14 @@
 
 | 日期 | 動作 |
 |------|------|
-| **08/31 Day 2** | **09:00 收館方訊息取得入室碼**（前提是 08/30 前已完成事前登記）→ 14:45–14:55 抵尾道站 → 步行約 10 分 → 約 15:10 Check-in（15:00 起）。大門密碼 **3177**，房門用當日收到的入室碼。**實際抵達比訂房時填的 17:00–18:00 早，先發第 3 封信告知抵達時刻**（館方回信也主動要求事前告知）|
+| **08/31 Day 2** | 14:45–14:55 抵尾道站 → 步行約 10 分 → 約 15:10 Check-in（15:00 起）。大門密碼 **3177**，房門用智慧鎖密碼。**實際抵達比訂房時填的 17:00–18:00 早，先發第 3 封信** |
 | **09/01 Day 3** | **06:30 出發**尾道東側古寺（全程徒步）。早餐前一晚買好或到車站 7-11；下午 15:30 回住宿**利用房內洗衣機洗衣**，是五晚裡最適合洗衣的一天 |
 | **09/02 Day 4** | 早餐自理（前一晚先買）。可利用房內洗衣機與烘衣機 |
 | **09/03 Day 5** | **07:00 出發**島波海道單車日。早餐前一晚買好 |
 | **09/04 Day 6** | **07:00 出發**。行李於當晚整理完畢，垃圾一併丟到屋外垃圾箱 |
 | **09/05 Day 7** | **07:00 直接離開**（退房期限 11:00）。關門按任意鍵自動上鎖，**不需辦理退房、不需歸還鑰匙**。步行至尾道站約 10 分，**當天先到倉敷看大原美術館，傍晚才進岡山**（不是回台灣，回程是 09/08）|
 
-> ⚠️ 這 5 晚的實際使用重點只有三件事：**08/30 前完成事前登記，08/31 09:00 收入室碼**、**每晚先買好隔天早餐**、**最後一晚清掉垃圾**。
+> ⚠️ 這 5 晚的實際使用重點只有三件事：**入住前拿到智慧鎖密碼**、**每晚先買好隔天早餐**、**最後一晚清掉垃圾**。
 
 ## 聯絡確認信件
 
@@ -363,102 +357,9 @@ LU CHO-HSUN と申します。滞在に関して4点お伺いいたします。
 LU CHO-HSUN
 ```
 
-## 飯店回信
-
-### 2026.08.28
-
-```
-この度はご予約いただき、誠にありがとうございます。
-
-ご宿泊日が近づいてまいりましたので、事前のご案内とお願いを申し上げます。
-
-━━━━━━━━━━━━━━━━━
-■ 1. ご到着予定時刻のお願い
-━━━━━━━━━━━━━━━━━
-当日のご到着予定時刻がお分かりでしたら、事前に本メッセージへお知らせいただけますと幸いです。
-
-▼荷物預かり：11:30 am 〜
-▼チェックイン： 3:00 pm 〜
-
-【荷物預かりをご利用の方へ】
-11:30以降、お部屋にお荷物を置くことが可能です。
-下記ルールをご確認のうえ、お客様ご自身でお部屋の中までお運びください。
-○ 3:00 pm までは清掃および設備点検の時間のため、ご滞在はできかねます。
-○ お荷物はお部屋の1箇所にまとめて置いてください。
-○ 冷蔵庫をご使用される場合は、事前にメッセージにてお知らせください。
-○ 荷物預かりの場合も、当日朝9時頃にお送りするチェックイン案内に従ってご入室ください。
-
-━━━━━━━━━━━━━━━━━
-■ 2. 事前チェックイン手続き（宿泊者情報の登録）について（必須）
-━━━━━━━━━━━━━━━━━
-当ホテルは無人運営施設のため、事前に宿泊者様情報の登録（本人確認）が必要となります。
-
-ご登録がお済みでない場合、当日のチェックイン案内が送信されない場合がございますので、チェックイン日の前日までにご登録をお願いいたします。
-すでに登録がお済みのお客様へは、チェックイン当日の午前9時に入室コードとお部屋の詳細をお送りいたします。
-
-登録方法がわからない方や、登録用リンクが見当たらない場合はお気軽にお問い合わせください。
-
-━━━━━━━━━━━━━━━━━
-■ 3. ホテル情報のご確認について
-━━━━━━━━━━━━━━━━━
-アクセス方法やアメニティなどのホテル情報につきましては、下記URLより事前にご確認ください。
-
-▼ホテル情報はこちら
-https://www.bhotel-info.com/pages/yutorieast/index.html
-
-
-皆様のお越しを心よりお待ちしております。
-
-===================================
-
-Thank you very much for booking with us!
-As your stay is approaching, we would like to share some important pre-arrival information.
-
-Your check-in date is approaching on Aug 31st, 2026
-
-━━━━━━━━━━━━━━━━━
-1. Estimated Time of Arrival
-━━━━━━━━━━━━━━━━━
-If you know your estimated time of arrival, please let us know in advance via message.
-
-▼ Luggage Drop-off：From 11:30 am
-▼ Check-in：From 3:00 pm
-
-【Luggage Drop-off】
-You may enter the room yourself and drop off your luggage from 11:30 am onwards.
-○ Please note that you can’t stay in the room before 3:00 pm as our staff will be cleaning and inspecting the room.
-○ Please place all your luggage together in one spot inside the room.
-○ If you wish to use the refrigerator before check-in, please inform us in advance via message.
-○ Even for luggage drop-off, please enter the room by following the instructions sent to you around 9:00 am on your check-in date.
-
-━━━━━━━━━━━━━━━━━
-2. Online Pre-Check-in (Guest Registration)
-━━━━━━━━━━━━━━━━━
-Since our property operates without on-site front desk staff, prior registration of guest information is required by Japanese law.
-
-If this registration is not completed, your check-in instructions may not be sent.
-Please make sure to complete it by the day before your check-in date.
-For guests who have already completed the registration, entry code and room details will be sent via message at 9:00 AM on your check-in date.
-
-If you are unsure how to register or cannot find the registration link, please feel free to contact us.
-
-━━━━━━━━━━━━━━━━━
-3. Hotel Information
-━━━━━━━━━━━━━━━━━
-Please check the link below in advance for details about location, access, amenities, and other facility information.
-
-▼Hotel Information
-https://www.bhotel-info.com/pages/yutorieast_eng/index.html
-
-We look forward to welcoming you!
-
-b hotel Management
-
-```
-
 ## 官方資訊來源
 
-- [bHOTEL Yutori East（官方）](https://www.bhotel-info.com/pages/yutorieast_eng/index.html)（日文版：<https://www.bhotel-info.com/pages/yutorieast/index.html>，2026.08.28 館方回信提供）
+- [bHOTEL Yutori East（官方）](https://www.bhotel-info.com/pages/yutorieast_eng/index.html)
 - [bHOTEL Yutori East — House Rules](https://www.bhotel-info.com/pages/yutorieast_eng/rules.html)
 - [bHOTEL Yutori East — How to Unlock](https://www.bhotel-info.com/pages/yutorieast_eng/unlock.html)
 - [bHOTEL Yutori East — Access](https://www.bhotel-info.com/pages/yutorieast_eng/access.html)

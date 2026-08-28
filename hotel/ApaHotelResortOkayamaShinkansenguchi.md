@@ -329,6 +329,23 @@ LU CHO-HSUN
 予約番号：5424.917.621
 ```
 
+## 飯店回信
+
+### 2026.08.28
+
+```
+Thank you for your inquiry.
+
+Check-in will be done using the machine at the front desk.
+
+Please have your passport ready as we will need to scan it.
+
+Upon departure, simply drop your room key into the check-out box. Any additional charges should be paid at the front desk.
+
+Please feel free to contact us if you have any further questions.
+Receptionist　Iryoda
+```
+
 ## 官方資訊來源
 
 - [アパホテル＆リゾート〈岡山駅新幹線口〉（官方）](https://www.apahotel.com/hotel/chushikoku/okayama/okayamaeki-shinkansenguchi/) — **查證期間全站 403，無法讀取**
